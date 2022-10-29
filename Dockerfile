@@ -33,3 +33,12 @@ RUN /bootstrap/install_packages.sh
 
 RUN mkdir /out
 WORKDIR /out
+
+ARG UID
+ARG GID
+RUN groupadd -g $GID user
+RUN useradd -ms /bin/bash -u $UID -g $GID user
+USER user
+ENV PATH=/opt/cmake/latest/bin:$PATH
+
+COPY bootstrap/run-*.sh /bootstrap/

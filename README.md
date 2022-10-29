@@ -5,5 +5,5 @@ It provides the build scripts for a bootstrap Docker image `cppdev` that can be 
 ## Building the Docker Image
 The `cppdev` Docker image can be built via:
 ```bash
-docker build -t cppdev .
+docker build --build-arg UID=$UID --build-arg GID=`id -g` -t cppdev .
 ```
