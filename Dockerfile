@@ -18,18 +18,18 @@ RUN \
 ENV CC=clang-14
 ENV CXX=clang++-14
 
-RUN mkdir /scripts
+RUN mkdir /bootstrap
 
-COPY docker-scripts/install_cmake.sh /scripts/
-RUN /scripts/install_cmake.sh
+COPY bootstrap/install_cmake.sh /bootstrap/
+RUN /bootstrap/install_cmake.sh
 ENV PATH=/opt/cmake/latest/bin:$PATH
 
-COPY docker-scripts/install_vcpkg.sh /scripts/
-RUN /scripts/install_vcpkg.sh
+COPY bootstrap/install_vcpkg.sh /bootstrap/
+RUN /bootstrap/install_vcpkg.sh
 ENV VCPKG_ROOT=/opt/vcpkg
 
-COPY docker-scripts/install_packages.sh /scripts/
-RUN /scripts/install_packages.sh
+COPY bootstrap/install_packages.sh /bootstrap/
+RUN /bootstrap/install_packages.sh
 
 RUN mkdir /out
 WORKDIR /out
