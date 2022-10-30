@@ -41,4 +41,4 @@ RUN useradd -ms /bin/bash -u $UID -g $GID user
 USER user
 ENV PATH=/opt/cmake/latest/bin:$PATH
 
-COPY bootstrap/run-*.sh /bootstrap/
+COPY bootstrap/* /bootstrap/
