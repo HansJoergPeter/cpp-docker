@@ -3,7 +3,9 @@ This repository provides a Docker-based, self-contained development environment 
 It provides the build scripts for a bootstrap Docker image `cppdev` that can be used both as a base image for a continuous delivery pipeline, or directly for local development.
 
 ## Building the Docker Image
+Make sure you're logged in as the user who wants to use the image going forward.
 The `cppdev` Docker image can be built via:
 ```bash
+# In the root directory of the repo
 docker build --build-arg UID=$UID --build-arg GID=`id -g` -t cppdev .
 ```
