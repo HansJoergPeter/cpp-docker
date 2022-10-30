@@ -9,3 +9,13 @@ The `cppdev` Docker image can be built via:
 # In the root directory of the repo
 docker build --build-arg UID=$UID --build-arg GID=`id -g` -t cppdev .
 ```
+
+## Running the C++ development scripts
+The development scripts under `scripts/` can now be executed in your C++ project directory:
+```bash
+# In the root directory of your C++/CMake project
+configure.sh
+build.sh -j
+run.sh build/bin/my_executable
+```
+It is recommended to add this repo's `scripts/` directory to your `PATH` environment variable.
