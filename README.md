@@ -2,7 +2,7 @@
 This repository provides a Docker-based, self-contained development environment for C++.
 It provides the build scripts for a bootstrap Docker image `cppdev` that can be used both as a base image for a continuous delivery pipeline, or directly for local development.
 
-## Building the Docker Image
+## Building the Docker image
 Make sure you're logged in as the user who wants to use the image going forward.
 The `cppdev` Docker image can be built via:
 ```bash
