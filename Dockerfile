@@ -1,4 +1,4 @@
-FROM ubuntu:22.04 AS cppdev
+FROM gcc:10.3 AS cppdev
 RUN \
   apt-get update && \
   apt-get -y upgrade && \
@@ -11,12 +11,9 @@ RUN \
     zip \
     unzip \
     tree \
-    pkg-config \
-    clang-14 \
-    clang-format-14 \
-    clang-tidy-14
-ENV CC=clang-14
-ENV CXX=clang++-14
+    pkg-config
+ENV CC=gcc
+ENV CXX=g++
 
 RUN mkdir /bootstrap
 
